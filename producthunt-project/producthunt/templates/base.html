@@ -8,14 +8,14 @@
 	<meta name="description" content="">
 	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 	<meta name="generator" content="Jekyll v3.8.5">
-	<title>Kamil Ścisło - Homepage</title>
+	<title>Product Hunt</title>
 	<link rel='icon' type='image/png' sizes='64x64' href="">
 
 	<link rel="canonical" href="">
 
 	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+	<link rel="stylesheet" type="text/css" href="{% static 'open-iconic-master/font/css/open-iconic-bootstrap.css'%}">
 
 	<style>
 		.bd-placeholder-img {
@@ -50,6 +50,8 @@
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav ml-auto">
 						{% if user.is_authenticated %}
+						<a class='nav-item nav-link' title="Create product" href="{% url 'create' %}"  alt='create'>
+						<span class="oi oi-plus"></span></a>
 						<a class="nav-item nav-link"
 						 href="javascript:{document.getElementById('logout').submit()}">Logout</a>
 						<form id='logout' method="POST" action="{% url 'logout'%}">
@@ -67,15 +69,15 @@
 			 </div>
 		</nav>
 	</header>
-	<div class='container'>
+	<div class='container pt-4 mb-8'>
 		{% block content %}
         
         {% endblock content  %}  
 	</div>
 
 
-	<footer class="page-footer text-muted font-small fixed-bottom stylish-color-dark pt-4">
-		<div class="container text-center">
+	<footer class="page-footer text-muted font-small fixed-bottom">
+		<div class="container text-center stylish-color-dark pt-10">
 			<p>Made with ❤ by Kamil Ścisło</p>
 			
 		</div>
